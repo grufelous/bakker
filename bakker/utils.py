@@ -2,6 +2,9 @@ from datetime import datetime
 
 
 def datetime_from_iso_format(string):
+    """
+    Provides a ``datetime`` object from given string.
+    """
     TIME_ISO_FORMAT = '%Y-%m-%dT%H:%M:%S'
     TIME_ISO_FORMAT_MILLISECONDS = '%Y-%m-%dT%H:%M:%S.%f'
 

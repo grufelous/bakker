@@ -8,14 +8,14 @@ class Config:
     """
     Config class provides methods to deal with configuration file for Bakker. 
     
-    Enables the ability to create, save, and read the ``config.json`` file. Can also read, write, and modify individual JSON key-value pairs in the configuration file.
+    Enables the ability to create, save, and read the config.json file. Can also read, write, and modify individual JSON key-value pairs in the configuration file.
     """
     USER_DIR = os.path.expanduser('~')
     CONFIG_FILE = os.path.join(USER_DIR, '.bakker/config.json')
 
     def __init__(self):
         """
-        Opens up the configuration file in read mode, loading it into the ``config`` variable. If the file does not exist, the config variable is initialized as an empty JSON object.
+        Opens up the configuration file in read mode, loading it into the config variable. If the file does not exist, the config variable is initialized as an empty JSON object.
         """
         if os.path.isfile(self.CONFIG_FILE):
             with open(self.CONFIG_FILE, 'r') as f:
@@ -34,10 +34,10 @@ class Config:
 
     def __setitem__(self, key, value):
         """
-        Sets individual items in the ``config`` variable.
+        Sets individual items in the config variable.
 
-        :param key: The key for which the ``value`` is to be updated.
-        :param value: The value to be put into the given ``key``.
+        :param key: The key for which the value is to be updated.
+        :param value: The value to be put into the given key.
         """
         assert isinstance(value, str)
 
@@ -50,7 +50,7 @@ class Config:
 
     def __getitem__(self, key):
         """
-        Returns the value stored in given ``key`` inside ``config``.
+        Returns the value stored in given ``key`` inside onfig.
 
         This method works by splitting the given ``key`` on the dot-operator ``.`` to traverse the JS object. Iteratively sets the ``current`` variable as its own ``key`` to reach the needed node. 
 
@@ -92,7 +92,7 @@ class Config:
 
     def __contains__(self, key):
         """
-        Checks if the given ``key`` exists in the ``config`` variable.
+        Checks if the given ``key`` exists in the config variable.
 
         Returns true if it does, and false otherwise. Uses ``__getitem__`` method to identify if the given ``key`` is present or not.
 
