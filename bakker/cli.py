@@ -15,7 +15,7 @@ config = Config()
 @click.version_option()
 def cli():
     """
-    Bakker.
+    Bakker.grufelous@grufelouspad:/atlas/OSP/bakker$
     """
     pass
 
@@ -119,6 +119,11 @@ def cli_restore_fs(path, identifier):
 
 
 def get_storage_choice():
+    """
+    Returns the chosen storage choice
+
+    C
+    """
     if DEFAULT_STORAGE_KEY not in config:
         click.echo('No default storage is defined.')
         click.echo()
